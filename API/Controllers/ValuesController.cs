@@ -20,12 +20,15 @@ namespace API.Controllers
            
         }
 
+        // GET api/values
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Value>>> Get()
         {
             var values = await _context.Values.ToListAsync();
             return Ok(values);
         }
+
+        //GET api/values/id
         [HttpGet("{id}")]
         public async Task<ActionResult<Value>> Get(int id)
         {
